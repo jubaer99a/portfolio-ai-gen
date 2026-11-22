@@ -1,134 +1,341 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Jubaer Hasan Sajim | CSE Student & Web Developer</title>
-<meta name="description" content="Portfolio of Jubaer Hasan Sajim, first-year CSE student building for the web.">
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;800&display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com/3.4.17"></script>
-<style>
-  html{scroll-behavior:smooth}
-  body{background:#0c1018;color:#e6ebf5;font-family:Sora,ui-sans-serif,system-ui,sans-serif}
-  .grid-bg{background-image:linear-gradient(#223047 1px,transparent 1px),linear-gradient(90deg,#223047 1px,transparent 1px);
-    background-size:56px 56px;-webkit-mask-image:radial-gradient(ellipse at 50% 30%,#000 10%,transparent 70%);mask-image:radial-gradient(ellipse at 50% 30%,#000 10%,transparent 70%);opacity:.35}
-  .tile{transition:border-color .2s,transform .2s}
-  .tile:hover{border-color:#7cc4ff;transform:translateY(-3px)}
-  .hello{animation:rise .9s ease both}
-  @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-  a:focus-visible,button:focus-visible{outline:2px solid #7cc4ff;outline-offset:3px}
-  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto}}
-</style>
-</head>
-<body class="antialiased">
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jubaer Hasan Sajim — CSE Student & Developer</title>
+    <meta name="description" content="Portfolio of Jubaer Hasan Sajim, a first-year CSE student passionate about web development and programming." />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              display: ['"Space Grotesk"', 'sans-serif'],
+              body: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              night: '#060a13',
+              panel: '#0b1120',
+              line: '#1e293b',
+              accent: { DEFAULT: '#22d3ee', soft: '#67e8f9', deep: '#0e7490' },
+            },
+          },
+        },
+      };
+    </script>
+    <style type="text/tailwindcss">
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-14px); }
+      }
+      @keyframes pulse-glow {
+        0%, 100% { opacity: 0.5; }
+        50% { opacity: 1; }
+      }
+      @keyframes slide-up {
+        from { opacity: 0; transform: translateY(24px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-float { animation: float 6s ease-in-out infinite; }
+      .animate-glow { animation: pulse-glow 4s ease-in-out infinite; }
+      .animate-slide-up { animation: slide-up 0.8s ease-out both; }
+      .delay-1 { animation-delay: 0.15s; }
+      .delay-2 { animation-delay: 0.3s; }
+      .delay-3 { animation-delay: 0.45s; }
+      .delay-4 { animation-delay: 0.6s; }
+    </style>
+    <meta property="og:image" content="https://bolt.new/static/og_default.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://bolt.new/static/og_default.png">
+  </head>
 
-<header class="fixed top-0 inset-x-0 z-20 backdrop-blur bg-[#0c1018]/70 border-b border-[#223047]">
-  <nav class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between text-sm">
-    <a href="#top" class="font-semibold tracking-tight">Sajim</a>
-    <div class="flex gap-6 text-[#8a97ad]">
-      <a href="#about" class="hover:text-white">About</a>
-      <a href="#skills" class="hover:text-white">Skills</a>
-      <a href="#projects" class="hover:text-white">Projects</a>
-      <a href="#contact" class="hover:text-white">Contact</a>
+  <body class="bg-night font-body text-slate-300 antialiased selection:bg-accent/30 selection:text-white">
+    <!-- Background grid + glow -->
+    <div class="pointer-events-none fixed inset-0 -z-10">
+      <div class="absolute inset-0 bg-[linear-gradient(rgba(148,163,184,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.05)_1px,transparent_1px)] bg-[size:56px_56px]"></div>
+      <div class="animate-glow absolute -top-40 left-1/2 h-[480px] w-[720px] -translate-x-1/2 rounded-full bg-accent/10 blur-[140px]"></div>
+      <div class="animate-glow absolute bottom-0 right-0 h-[380px] w-[520px] rounded-full bg-emerald-500/5 blur-[120px]"></div>
     </div>
-  </nav>
-</header>
 
-<main class="relative z-10">
-  <!-- Hero -->
-  <section id="top" class="relative min-h-screen flex items-center px-6">
-    <div class="grid-bg absolute inset-0"></div>
-    <div class="relative max-w-5xl mx-auto w-full pt-14 hello">
-      <p class="inline-flex items-center gap-2 text-xs text-[#8a97ad] border border-[#223047] rounded-full px-3 py-1 mb-8">
-        <span class="w-2 h-2 rounded-full bg-[#7cc4ff]"></span> First-year CSE student, open to projects
-      </p>
-      <h1 class="text-5xl sm:text-7xl md:text-8xl font-extrabold tracking-tighter leading-[0.95]">
-        Jubaer Hasan<br>Sajim
-      </h1>
-      <p class="mt-8 max-w-xl text-lg text-[#8a97ad] font-light leading-relaxed">
-        I build fast, clean websites and small programs. Learning computer science by shipping things, from C to React.
-      </p>
-      <div class="mt-10 flex flex-wrap gap-4">
-        <a href="#projects" class="px-6 py-3 rounded-full bg-white text-[#0c1018] font-semibold text-sm hover:bg-[#7cc4ff] transition-colors">View projects</a>
-        <a href="#contact" class="px-6 py-3 rounded-full border border-[#223047] text-sm hover:border-[#7cc4ff] transition-colors">Contact me</a>
-      </div>
-    </div>
-  </section>
+    <!-- ===== Navbar ===== -->
+    <header class="fixed inset-x-0 top-0 z-50 border-b border-line/60 bg-night/80 backdrop-blur-xl">
+      <nav class="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
+        <a href="#home" class="font-display text-lg font-700 font-bold tracking-tight text-white">
+          JHS<span class="text-accent">.</span>
+        </a>
+        <ul class="hidden items-center gap-8 text-sm font-medium text-slate-400 md:flex">
+          <li><a href="#home" class="transition hover:text-accent">Home</a></li>
+          <li><a href="#about" class="transition hover:text-accent">About</a></li>
+          <li><a href="#skills" class="transition hover:text-accent">Skills</a></li>
+          <li><a href="#projects" class="transition hover:text-accent">Projects</a></li>
+          <li><a href="#contact" class="transition hover:text-accent">Contact</a></li>
+        </ul>
+        <a href="#contact" class="rounded-full border border-accent/40 bg-accent/10 px-5 py-2 text-sm font-semibold text-accent-soft transition hover:bg-accent hover:text-night">
+          Hire Me
+        </a>
+      </nav>
+    </header>
 
-  <!-- About -->
-  <section id="about" class="px-6 py-28">
-    <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-10">
-      <h2 class="text-2xl font-semibold tracking-tight">About me</h2>
-      <div class="md:col-span-2 text-[#8a97ad] font-light leading-relaxed space-y-5 max-w-prose">
-        <p>I am Jubaer Hasan Sajim, a first-year Computer Science and Engineering student from Dhaka, Bangladesh.</p>
-        <p>I like turning ideas into working interfaces and understanding how things run underneath, which is why I study both frontend tools and low-level languages like C.</p>
-        <div class="grid grid-cols-3 gap-4 pt-4 text-white">
-          <div class="border-l border-[#223047] pl-4"><p class="text-2xl font-semibold">8</p><p class="text-xs text-[#8a97ad]">Technologies</p></div>
-          <div class="border-l border-[#223047] pl-4"><p class="text-2xl font-semibold">CSE</p><p class="text-xs text-[#8a97ad]">Year 1</p></div>
-          <div class="border-l border-[#223047] pl-4"><p class="text-2xl font-semibold">BD</p><p class="text-xs text-[#8a97ad]">Dhaka</p></div>
+    <main class="mx-auto max-w-6xl px-6">
+      <!-- ===== Hero ===== -->
+      <section id="home" class="flex min-h-screen flex-col items-center justify-center pt-16 text-center">
+        <div class="animate-slide-up mb-6 flex items-center gap-2 rounded-full border border-line bg-panel/70 px-4 py-1.5 text-xs font-medium text-slate-400">
+          <span class="relative flex h-2 w-2">
+            <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60"></span>
+            <span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-400"></span>
+          </span>
+          Available for opportunities
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Skills -->
-  <section id="skills" class="px-6 py-28 border-t border-[#223047]">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="text-2xl font-semibold tracking-tight mb-12">Skills</h2>
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-      <div class="tile bg-[#131a27] border border-[#223047] rounded-2xl p-6 flex flex-col items-center gap-4"><svg viewBox="0 0 24 24" class="w-12 h-12" aria-hidden="true"><path d="M3 2l1.7 18.8L12 23l7.3-2.2L21 2z" fill="#E34F26"/><path d="M12 4v17.3l5.8-1.7L19.3 4z" fill="#EF652A"/><path d="M7 8h10l-.3 3H10l.2 2.5H16l-.4 4.3-3.6 1-3.6-1-.2-2.8h2.7l.1 1.3 1 .3 1-.3.1-1.7H7.6z" fill="#fff"/></svg><span class="text-sm">HTML5</span></div>
-      <div class="tile bg-[#131a27] border border-[#223047] rounded-2xl p-6 flex flex-col items-center gap-4"><svg viewBox="0 0 24 24" class="w-12 h-12" aria-hidden="true"><path d="M3 2l1.7 18.8L12 23l7.3-2.2L21 2z" fill="#1572B6"/><path d="M12 4v17.3l5.8-1.7L19.3 4z" fill="#33A9DC"/><path d="M7 8h10l-.3 3H10l.2 2.5h6l-.4 4.3-3.8 1-3.8-1-.2-2.8h2.7l.1 1.3 1.2.3 1.1-.3.2-1.7H7z" fill="#fff"/></svg><span class="text-sm">CSS3</span></div>
-      <div class="tile bg-[#131a27] border border-[#223047] rounded-2xl p-6 flex flex-col items-center gap-4"><svg viewBox="0 0 24 24" class="w-12 h-12" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="2" fill="#F7DF1E"/><text x="12.5" y="19" font-size="9.5" font-weight="800" font-family="Sora,sans-serif" fill="#111" text-anchor="middle">JS</text></svg><span class="text-sm">JavaScript</span></div>
-      <div class="tile bg-[#131a27] border border-[#223047] rounded-2xl p-6 flex flex-col items-center gap-4"><svg viewBox="0 0 24 24" class="w-12 h-12" aria-hidden="true"><path fill="#38BDF8" d="M12 6c-2.67 0-4.33 1.33-5 4 1-1.33 2.17-1.83 3.5-1.5.76.19 1.31.74 1.91 1.35.98 1 2.09 2.15 4.59 2.15 2.67 0 4.33-1.33 5-4-1 1.33-2.17 1.83-3.5 1.5-.76-.19-1.3-.74-1.91-1.35C15.61 7.15 14.5 6 12 6zm-5 6c-2.67 0-4.33 1.33-5 4 1-1.33 2.17-1.83 3.5-1.5.76.19 1.3.74 1.91 1.35C8.39 16.85 9.5 18 12 18c2.67 0 4.33-1.33 5-4-1 1.33-2.17 1.83-3.5 1.5-.76-.19-1.3-.74-1.91-1.35C10.61 13.15 9.5 12 7 12z"/></svg><span class="text-sm">Tailwind CSS</span></div>
-      <div class="tile bg-[#131a27] border border-[#223047] rounded-2xl p-6 flex flex-col items-center gap-4"><svg viewBox="0 0 24 24" class="w-12 h-12" aria-hidden="true"><path d="M11.9 2C7.5 2 7.8 3.9 7.8 3.9V6h4.2v.7H6.1S3 6.3 3 11s2.7 4.5 2.7 4.5h1.6v-2.2s-.1-2.7 2.7-2.7h4.6s2.600 0 2.600-2.500V4.700S17.700 2 11.900 2zM9.500 3.600a.8.8 0 110 1.600.8.8 0 010-1.600z" fill="#3776AB"/><path d="M12.100 22c4.400 0 4.100-1.900 4.100-1.900V18h-4.200v-.7h5.900s3.100.4 3.100-4.300-2.700-4.500-2.700-4.500h-1.600v2.200s.1 2.700-2.700 2.700H9.400s-2.600 0-2.600 2.500v3.900S6.300 22 12.100 22zm2.400-1.600a.8.8 0 110-1.600.8.8 0 010 1.600z" fill="#FFD43B"/></svg><span class="text-sm">Python</span></div>
-      <div class="tile bg-[#131a27] border border-[#223047] rounded-2xl p-6 flex flex-col items-center gap-4"><svg viewBox="0 0 24 24" class="w-12 h-12" aria-hidden="true"><polygon points="12,1.5 21.5,7 21.5,17 12,22.5 2.5,17 2.5,7" fill="#5C6BC0"/><text x="12" y="16.5" font-size="11" font-weight="800" font-family="Sora,sans-serif" fill="#fff" text-anchor="middle">C</text></svg><span class="text-sm">C</span></div>
-      <div class="tile bg-[#131a27] border border-[#223047] rounded-2xl p-6 flex flex-col items-center gap-4"><svg viewBox="0 0 24 24" class="w-12 h-12" aria-hidden="true"><polygon points="12,1.5 21.5,7 21.5,17 12,22.5 2.5,17 2.5,7" fill="#5FA04E"/><text x="12" y="15.200" font-size="6.500" font-weight="800" font-family="Sora,sans-serif" fill="#fff" text-anchor="middle">node</text></svg><span class="text-sm">Node.js</span></div>
-      <div class="tile bg-[#131a27] border border-[#223047] rounded-2xl p-6 flex flex-col items-center gap-4"><svg viewBox="0 0 24 24" class="w-12 h-12" aria-hidden="true"><g fill="none" stroke="#61DAFB" stroke-width="1.100"><ellipse cx="12" cy="12" rx="10" ry="4.100"/><ellipse cx="12" cy="12" rx="10" ry="4.100" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4.100" transform="rotate(120 12 12)"/></g><circle cx="12" cy="12" r="1.900" fill="#61DAFB"/></svg><span class="text-sm">React</span></div>
-      </div>
-    </div>
-  </section>
+        <p class="animate-slide-up delay-1 mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-accent">Hello, I am</p>
+        <h1 class="animate-slide-up delay-2 font-display text-5xl font-bold tracking-tight text-white sm:text-6xl md:text-7xl">
+          Jubaer Hasan <span class="bg-gradient-to-r from-accent to-emerald-400 bg-clip-text text-transparent">Sajim</span>
+        </h1>
+        <p class="animate-slide-up delay-3 mt-6 max-w-2xl text-lg leading-relaxed text-slate-400 sm:text-xl">
+          First-year CSE student crafting clean, modern experiences with code.
+          Turning ideas into interfaces — one build at a time.
+        </p>
 
-  <!-- Projects -->
-  <section id="projects" class="px-6 py-28 border-t border-[#223047]">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="text-2xl font-semibold tracking-tight mb-12">Projects</h2>
-      <!-- Replace titles, text and links with your own projects -->
-      <div class="grid md:grid-cols-3 gap-5">
-        <a href="#" class="tile block bg-[#131a27] border border-[#223047] rounded-2xl p-6">
-          <p class="text-xs text-[#8a97ad] mb-6">HTML, Tailwind CSS</p>
-          <h3 class="font-semibold mb-2">Your first project</h3>
-          <p class="text-sm text-[#8a97ad] font-light">One line about what it does and why you built it.</p>
-        </a>
-        <a href="#" class="tile block bg-[#131a27] border border-[#223047] rounded-2xl p-6">
-          <p class="text-xs text-[#8a97ad] mb-6">React, Node.js</p>
-          <h3 class="font-semibold mb-2">Your second project</h3>
-          <p class="text-sm text-[#8a97ad] font-light">One line about what it does and why you built it.</p>
-        </a>
-        <a href="#" class="tile block bg-[#131a27] border border-[#223047] rounded-2xl p-6">
-          <p class="text-xs text-[#8a97ad] mb-6">Python, C</p>
-          <h3 class="font-semibold mb-2">Your third project</h3>
-          <p class="text-sm text-[#8a97ad] font-light">One line about what it does and why you built it.</p>
-        </a>
-      </div>
-    </div>
-  </section>
+        <div class="animate-slide-up delay-4 mt-10 flex flex-wrap items-center justify-center gap-4">
+          <a href="#projects" class="rounded-full bg-accent px-8 py-3.5 text-sm font-semibold text-night shadow-lg shadow-accent/25 transition hover:scale-105 hover:bg-accent-soft">
+            View My Work
+          </a>
+          <a href="#contact" class="rounded-full border border-line bg-panel/60 px-8 py-3.5 text-sm font-semibold text-white transition hover:border-accent/50 hover:text-accent">
+            Get In Touch
+          </a>
+        </div>
 
-  <!-- Contact -->
-  <section id="contact" class="px-6 py-28 border-t border-[#223047]">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tighter max-w-2xl leading-tight">Have an idea or a team to join? Let's talk.</h2>
-      <div class="mt-10 flex flex-wrap gap-4 text-sm">
-        <a href="mailto:you@example.com" class="px-6 py-3 rounded-full bg-white text-[#0c1018] font-semibold hover:bg-[#7cc4ff] transition-colors">Email me</a>
-        <a href="https://github.com/your-username" class="px-6 py-3 rounded-full border border-[#223047] hover:border-[#7cc4ff] transition-colors">GitHub</a>
-        <a href="https://linkedin.com/in/your-username" class="px-6 py-3 rounded-full border border-[#223047] hover:border-[#7cc4ff] transition-colors">LinkedIn</a>
-      </div>
-    </div>
-  </section>
-</main>
+        <div class="animate-float mt-20 flex gap-6 text-slate-500">
+          <span class="font-display text-sm">HTML</span>
+          <span class="text-accent">/</span>
+          <span class="font-display text-sm">CSS</span>
+          <span class="text-accent">/</span>
+          <span class="font-display text-sm">JS</span>
+          <span class="text-accent">/</span>
+          <span class="font-display text-sm">React</span>
+          <span class="text-accent">/</span>
+          <span class="font-display text-sm">Python</span>
+        </div>
+      </section>
 
-<footer class="relative z-10 border-t border-[#223047] px-6 py-8 text-center text-xs text-[#8a97ad]">
-  © 2026 Jubaer Hasan Sajim
-</footer>
+      <!-- ===== About ===== -->
+      <section id="about" class="scroll-mt-24 py-24">
+        <p class="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-accent">About Me</p>
+        <h2 class="font-display text-3xl font-bold text-white sm:text-4xl">A builder at heart</h2>
+        <div class="mt-10 grid gap-6 md:grid-cols-3">
+          <div class="rounded-2xl border border-line bg-panel/60 p-7 transition hover:-translate-y-1 hover:border-accent/40">
+            <div class="mb-4 inline-flex rounded-xl bg-accent/10 p-3 text-accent">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            </div>
+            <h3 class="font-display text-lg font-semibold text-white">Education</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-400">
+              Currently a first-year Computer Science & Engineering student at university, building a strong foundation in programming and problem solving.
+            </p>
+          </div>
+          <div class="rounded-2xl border border-line bg-panel/60 p-7 transition hover:-translate-y-1 hover:border-accent/40">
+            <div class="mb-4 inline-flex rounded-xl bg-accent/10 p-3 text-accent">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <h3 class="font-display text-lg font-semibold text-white">What I Do</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-400">
+              I design and develop responsive websites and web apps with modern tools — from pixel-perfect frontends to logic on the backend with Node.js and Python.
+            </p>
+          </div>
+          <div class="rounded-2xl border border-line bg-panel/60 p-7 transition hover:-translate-y-1 hover:border-accent/40">
+            <div class="mb-4 inline-flex rounded-xl bg-accent/10 p-3 text-accent">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg>
+            </div>
+            <h3 class="font-display text-lg font-semibold text-white">Vision</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-400">
+              To grow into a full-stack engineer who ships products people love — minimalist in design, powerful under the hood.
+            </p>
+          </div>
+        </div>
+      </section>
 
-</body>
+      <!-- ===== Skills ===== -->
+      <section id="skills" class="scroll-mt-24 py-24">
+        <p class="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-accent">Skills</p>
+        <h2 class="font-display text-3xl font-bold text-white sm:text-4xl">My tech toolbox</h2>
+        <div class="mt-12 grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4">
+
+          <!-- HTML5 -->
+          <div class="group rounded-2xl border border-line bg-panel/60 p-6 text-center transition hover:-translate-y-1.5 hover:border-orange-500/50 hover:shadow-lg hover:shadow-orange-500/10">
+            <div class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-orange-500/20 to-orange-500/5 transition group-hover:scale-110">
+              <svg width="34" height="34" viewBox="0 0 24 24" role="img" aria-label="HTML5">
+                <path fill="#e34f26" d="M3 2l1.64 18.42L12 22.5l7.36-2.08L21 2H3zm14.3 6.02H8.62l.2 2.3h8.28l-.66 7.42-4.44 1.23-4.43-1.23-.3-3.4h2.17l.16 1.72 2.4.66 2.4-.66.26-2.86H6.66L6.05 5.7h11.9l-.65 2.32z"/>
+              </svg>
+            </div>
+            <h3 class="font-display font-semibold text-white">HTML5</h3>
+            <p class="mt-1 text-xs text-slate-500">Semantic markup</p>
+          </div>
+
+          <!-- CSS3 -->
+          <div class="group rounded-2xl border border-line bg-panel/60 p-6 text-center transition hover:-translate-y-1.5 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/10">
+            <div class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-500/20 to-blue-500/5 transition group-hover:scale-110">
+              <svg width="34" height="34" viewBox="0 0 24 24" role="img" aria-label="CSS3">
+                <path fill="#1572b6" d="M3 2l1.64 18.42L12 22.5l7.36-2.08L21 2H3zm14.3 6.02H8.62l.2 2.3h8.28l-.66 7.42-4.44 1.23-4.43-1.23-.3-3.4h2.17l.16 1.72 2.4.66 2.4-.66.26-2.86H6.66L6.05 5.7h11.9l-.65 2.32z"/>
+              </svg>
+            </div>
+            <h3 class="font-display font-semibold text-white">CSS3</h3>
+            <p class="mt-1 text-xs text-slate-500">Modern styling</p>
+          </div>
+
+          <!-- Tailwind CSS -->
+          <div class="group rounded-2xl border border-line bg-panel/60 p-6 text-center transition hover:-translate-y-1.5 hover:border-cyan-500/50 hover:shadow-lg hover:shadow-cyan-500/10">
+            <div class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-500/20 to-cyan-500/5 transition group-hover:scale-110">
+              <svg width="34" height="34" viewBox="0 0 24 24" role="img" aria-label="Tailwind CSS">
+                <path fill="#06b6d4" d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C16.336 6.182 14.975 4.8 12.001 4.8zM6.001 12c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.177 1.194 2.538 2.576 5.512 2.576 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.336 13.382 8.975 12 6.001 12z"/>
+              </svg>
+            </div>
+            <h3 class="font-display font-semibold text-white">Tailwind</h3>
+            <p class="mt-1 text-xs text-slate-500">Utility-first CSS</p>
+          </div>
+
+          <!-- JavaScript -->
+          <div class="group rounded-2xl border border-line bg-panel/60 p-6 text-center transition hover:-translate-y-1.5 hover:border-yellow-500/50 hover:shadow-lg hover:shadow-yellow-500/10">
+            <div class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-yellow-500/20 to-yellow-500/5 transition group-hover:scale-110">
+              <svg width="34" height="34" viewBox="0 0 24 24" role="img" aria-label="JavaScript">
+                <rect width="24" height="24" rx="4" fill="#f7df1e"/>
+                <text x="12" y="17" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#0b1120">JS</text>
+              </svg>
+            </div>
+            <h3 class="font-display font-semibold text-white">JavaScript</h3>
+            <p class="mt-1 text-xs text-slate-500">Interactive logic</p>
+          </div>
+
+          <!-- Python -->
+          <div class="group rounded-2xl border border-line bg-panel/60 p-6 text-center transition hover:-translate-y-1.5 hover:border-blue-400/50 hover:shadow-lg hover:shadow-blue-400/10">
+            <div class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-400/20 to-yellow-400/5 transition group-hover:scale-110">
+              <svg width="34" height="34" viewBox="0 0 24 24" role="img" aria-label="Python">
+                <path fill="#3776ab" d="M11.9 2c-1.7 0-3.3.15-4.6.4C4.5 2.9 4 3.7 4 5.3V8h8v1H4.5c-1.7 0-3.2 1-3.6 2.9-.5 2.2-.5 3.6 0 5.9C1.3 19.5 2.3 21 4 21h2v-3c0-1.8 1.6-3.4 3.4-3.4h5.2c1.5 0 2.8-1.3 2.8-2.8V5.3c0-1.5-1.3-2.7-2.8-3C13.7 2.1 12.7 2 11.9 2zM8.4 4c.6 0 1.1.5 1.1 1.1S9 6.2 8.4 6.2 7.3 5.7 7.3 5.1 7.8 4 8.4 4z"/>
+                <path fill="#ffd43b" d="M12.1 22c1.7 0 3.3-.15 4.6-.4 2.8-.5 3.3-1.3 3.3-2.9V16h-8v-1h6.5c1.7 0 3.2-1 3.6-2.9.5-2.2.5-3.6 0-5.9-.4-1.6-1.4-3.1-3.1-3.1h-2v3c0 1.8-1.6 3.4-3.4 3.4H8.4c-1.5 0-2.8 1.3-2.8 2.8v5.9c0 1.5 1.3 2.7 2.8 3 1.7.2 2.7.2 3.7.2zm3.5-2c-.6 0-1.1-.5-1.1-1.1s.5-1.1 1.1-1.1 1.1.5 1.1 1.1-.5 1.1-1.1 1.1z"/>
+              </svg>
+            </div>
+            <h3 class="font-display font-semibold text-white">Python</h3>
+            <p class="mt-1 text-xs text-slate-500">Scripting & logic</p>
+          </div>
+
+          <!-- C -->
+          <div class="group rounded-2xl border border-line bg-panel/60 p-6 text-center transition hover:-translate-y-1.5 hover:border-blue-600/50 hover:shadow-lg hover:shadow-blue-600/10">
+            <div class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600/20 to-blue-600/5 transition group-hover:scale-110">
+              <svg width="34" height="34" viewBox="0 0 24 24" role="img" aria-label="C">
+                <path fill="#03599c" d="M22 10.05l-1.2-.7V7.2c0-.9-.5-1.7-1.2-2.2L14 1.4c-.7-.4-1.7-.4-2.4 0L6 5c-.7.4-1.2 1.2-1.2 2.2v9.6c0 .9.5 1.7 1.2 2.2l5.6 3.6c.7.4 1.7.4 2.4 0l5.6-3.6c.7-.4 1.2-1.2 1.2-2.2v-2.1l1.2-.7c.7-.4 1.2-1.2 1.2-2v-.1c0-.7-.4-1.5-1.2-1.9zm-10 6.85c-2.7 0-4.9-2.2-4.9-4.9S9.3 7.1 12 7.1c1.8 0 3.4 1 4.2 2.4l-2.1 1.2c-.4-.7-1.2-1.2-2.1-1.2-1.3 0-2.4 1.1-2.4 2.4s1.1 2.4 2.4 2.4c.9 0 1.7-.5 2.1-1.2l2.1 1.2c-.8 1.5-2.4 2.4-4.2 2.4z"/>
+              </svg>
+            </div>
+            <h3 class="font-display font-semibold text-white">C</h3>
+            <p class="mt-1 text-xs text-slate-500">Programming basics</p>
+          </div>
+
+          <!-- Node.js -->
+          <div class="group rounded-2xl border border-line bg-panel/60 p-6 text-center transition hover:-translate-y-1.5 hover:border-green-500/50 hover:shadow-lg hover:shadow-green-500/10">
+            <div class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-green-500/20 to-green-500/5 transition group-hover:scale-110">
+              <svg width="34" height="34" viewBox="0 0 24 24" role="img" aria-label="Node.js">
+                <path fill="#339933" d="M12 1.8l8.6 5v10.4L12 22.2l-8.6-5V6.8l8.6-5zm-2.1 14.4l-3.1-1.8a1.2 1.2 0 0 1-.6-1V9.8l1.4-.8v4.6c0 .2.1.4.3.5l2 1.2v.9zm2.1.4c-.4 0-.8-.1-1.1-.3l-.4-.2V14l.7.4c.2.1.5.2.8.2s.6-.1.8-.2c.2-.1.4-.4.4-.7 0-.3-.1-.5-.3-.6-.2-.2-.7-.4-1.3-.7-.6-.3-1.1-.5-1.4-.9-.4-.4-.6-.9-.6-1.4 0-.6.3-1.1.8-1.5.5-.4 1.1-.6 1.9-.6.5 0 1 .1 1.5.3.3.1.6.3.8.4l-1.2.9c-.2-.1-.4-.2-.6-.3-.2-.1-.4-.1-.6-.1-.2 0-.5.1-.7.2-.2.1-.3.3-.3.5 0 .2.1.4.3.5.2.2.6.4 1.2.7l1 .5c.3.2.6.4.8.7.2.3.3.6.3 1 0 .7-.3 1.3-.9 1.7-.5.4-1.2.6-2 .6z"/>
+              </svg>
+            </div>
+            <h3 class="font-display font-semibold text-white">Node.js</h3>
+            <p class="mt-1 text-xs text-slate-500">Backend runtime</p>
+          </div>
+
+          <!-- React -->
+          <div class="group rounded-2xl border border-line bg-panel/60 p-6 text-center transition hover:-translate-y-1.5 hover:border-sky-400/50 hover:shadow-lg hover:shadow-sky-400/10">
+            <div class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-400/20 to-sky-400/5 transition group-hover:scale-110">
+              <svg width="34" height="34" viewBox="0 0 24 24" role="img" aria-label="React">
+                <circle cx="12" cy="12" r="2.1" fill="#61dafb"/>
+                <g stroke="#61dafb" stroke-width="1.1" fill="none">
+                  <ellipse cx="12" cy="12" rx="10" ry="4"/>
+                  <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/>
+                  <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/>
+                </g>
+              </svg>
+            </div>
+            <h3 class="font-display font-semibold text-white">React JS</h3>
+            <p class="mt-1 text-xs text-slate-500">Component UIs</p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ===== Projects ===== -->
+      <section id="projects" class="scroll-mt-24 py-24">
+        <p class="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-accent">Projects</p>
+        <h2 class="font-display text-3xl font-bold text-white sm:text-4xl">Things I have built</h2>
+        <div class="mt-12 grid gap-6 md:grid-cols-3">
+          <article class="group overflow-hidden rounded-2xl border border-line bg-panel/60 transition hover:-translate-y-1.5 hover:border-accent/40">
+            <div class="flex h-40 items-center justify-center bg-gradient-to-br from-accent/15 via-panel to-panel">
+              <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            </div>
+            <div class="p-6">
+              <h3 class="font-display text-lg font-semibold text-white">Personal Portfolio</h3>
+              <p class="mt-2 text-sm leading-relaxed text-slate-400">A minimalist, futuristic portfolio site built with pure HTML and Tailwind CSS — fully responsive and animation-rich.</p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="rounded-full border border-line px-3 py-1 text-xs text-slate-400">HTML</span>
+                <span class="rounded-full border border-line px-3 py-1 text-xs text-slate-400">Tailwind</span>
+              </div>
+            </div>
+          </article>
+          <article class="group overflow-hidden rounded-2xl border border-line bg-panel/60 transition hover:-translate-y-1.5 hover:border-accent/40">
+            <div class="flex h-40 items-center justify-center bg-gradient-to-br from-emerald-500/15 via-panel to-panel">
+              <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>
+            </div>
+            <div class="p-6">
+              <h3 class="font-display text-lg font-semibold text-white">Student Dashboard</h3>
+              <p class="mt-2 text-sm leading-relaxed text-slate-400">A clean dashboard concept for tracking classes, assignments and CGPA — with React components and reusable UI.</p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="rounded-full border border-line px-3 py-1 text-xs text-slate-400">React</span>
+                <span class="rounded-full border border-line px-3 py-1 text-xs text-slate-400">Tailwind</span>
+              </div>
+            </div>
+          </article>
+          <article class="group overflow-hidden rounded-2xl border border-line bg-panel/60 transition hover:-translate-y-1.5 hover:border-accent/40">
+            <div class="flex h-40 items-center justify-center bg-gradient-to-br from-orange-500/15 via-panel to-panel">
+              <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#fb923c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+            </div>
+            <div class="p-6">
+              <h3 class="font-display text-lg font-semibold text-white">Utility Scripts</h3>
+              <p class="mt-2 text-sm leading-relaxed text-slate-400">Handy Python and C programs — from file organizers to small algorithms — written while mastering fundamentals.</p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="rounded-full border border-line px-3 py-1 text-xs text-slate-400">Python</span>
+                <span class="rounded-full border border-line px-3 py-1 text-xs text-slate-400">C</span>
+                <span class="rounded-full border border-line px-3 py-1 text-xs text-slate-400">Node</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== Contact ===== -->
+      <section id="contact" class="scroll-mt-24 py-24">
+        <div class="overflow-hidden rounded-3xl border border-line bg-gradient-to-br from-panel to-night p-10 text-center sm:p-16">
+          <h2 class="font-display text-3xl font-bold text-white sm:text-4xl">Let's build something <span class="bg-gradient-to-r from-accent to-emerald-400 bg-clip-text text-transparent">together</span></h2>
+          <p class="mx-auto mt-4 max-w-xl text-slate-400">
+            Have a project in mind, an internship opportunity, or just want to say hello? My inbox is always open.
+          </p>
+          <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+            <a href="mailto:jubaerhasansajim@example.com" class="rounded-full bg-accent px-8 py-3.5 text-sm font-semibold text-night shadow-lg shadow-accent/25 transition hover:scale-105 hover:bg-accent-soft">
+              Say Hello
+            </a>
+            <a href="https://github.com/jubaer99a" target="_blank" rel="noopener" class="rounded-full border border-line px-8 py-3.5 text-sm font-semibold text-white transition hover:border-accent/50 hover:text-accent">
+              GitHub
+            </a>
+            <a href="https://linkedin.com/" target="_blank" rel="noopener" class="rounded-full border border-line px-8 py-3.5 text-sm font-semibold text-white transition hover:border-accent/50 hover:text-accent">
+              LinkedIn
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== Footer ===== -->
+    <footer class="border-t border-line/60 py-8">
+      <p class="text-center text-sm text-slate-500">
+        &copy; 2026 <span class="text-slate-300">Jubaer Hasan Sajim</span> — Crafted with HTML &amp; Tailwind CSS.
+      </p>
+    </footer>
+  </body>
 </html>
