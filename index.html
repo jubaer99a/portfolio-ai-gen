@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jubaer Hasan Sajim | CSE Student & Web Developer</title>
+<meta name="description" content="Portfolio of Jubaer Hasan Sajim, first-year CSE student building for the web.">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<style>
+  html{scroll-behavior:smooth}
+  body{background:#0c1018;color:#e6ebf5;font-family:Sora,ui-sans-serif,system-ui,sans-serif}
+  .grid-bg{background-image:linear-gradient(#223047 1px,transparent 1px),linear-gradient(90deg,#223047 1px,transparent 1px);
+    background-size:56px 56px;-webkit-mask-image:radial-gradient(ellipse at 50% 30%,#000 10%,transparent 70%);mask-image:radial-gradient(ellipse at 50% 30%,#000 10%,transparent 70%);opacity:.35}
+  .tile{transition:border-color .2s,transform .2s}
+  .tile:hover{border-color:#7cc4ff;transform:translateY(-3px)}
+  .hello{animation:rise .9s ease both}
+  @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+  a:focus-visible,button:focus-visible{outline:2px solid #7cc4ff;outline-offset:3px}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto}}
+</style>
+</head>
+<body class="antialiased">
+
+<header class="fixed top-0 inset-x-0 z-20 backdrop-blur bg-[#0c1018]/70 border-b border-[#223047]">
+  <nav class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between text-sm">
+    <a href="#top" class="font-semibold tracking-tight">Sajim</a>
+    <div class="flex gap-6 text-[#8a97ad]">
+      <a href="#about" class="hover:text-white">About</a>
+      <a href="#skills" class="hover:text-white">Skills</a>
+      <a href="#projects" class="hover:text-white">Projects</a>
+      <a href="#contact" class="hover:text-white">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main class="relative z-10">
+  <!-- Hero -->
+  <section id="top" class="relative min-h-screen flex items-center px-6">
+    <div class="grid-bg absolute inset-0"></div>
+    <div class="relative max-w-5xl mx-auto w-full pt-14 hello">
+      <p class="inline-flex items-center gap-2 text-xs text-[#8a97ad] border border-[#223047] rounded-full px-3 py-1 mb-8">
+        <span class="w-2 h-2 rounded-full bg-[#7cc4ff]"></span> First-year CSE student, open to projects
+      </p>
+      <h1 class="text-5xl sm:text-7xl md:text-8xl font-extrabold tracking-tighter leading-[0.95]">
+        Jubaer Hasan<br>Sajim
+      </h1>
+      <p class="mt-8 max-w-xl text-lg text-[#8a97ad] font-light leading-relaxed">
+        I build fast, clean websites and small programs. Learning computer science by shipping things, from C to React.
+      </p>
+      <div class="mt-10 flex flex-wrap gap-4">
+        <a href="#projects" class="px-6 py-3 rounded-full bg-white text-[#0c1018] font-semibold text-sm hover:bg-[#7cc4ff] transition-colors">View projects</a>
+        <a href="#contact" class="px-6 py-3 rounded-full border border-[#223047] text-sm hover:border-[#7cc4ff] transition-colors">Contact me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="px-6 py-28">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-10">
+      <h2 class="text-2xl font-semibold tracking-tight">About me</h2>
+      <div class="md:col-span-2 text-[#8a97ad] font-light leading-relaxed space-y-5 max-w-prose">
+        <p>I am Jubaer Hasan Sajim, a first-year Computer Science and Engineering student from Dhaka, Bangladesh.</p>
+        <p>I like turning ideas into working interfaces and understanding how things run underneath, which is why I study both frontend tools and low-level languages like C.</p>
+        <div class="grid grid-cols-3 gap-4 pt-4 text-white">
+          <div class="border-l border-[#223047] pl-4"><p class="text-2xl font-semibold">8</p><p class="text-xs text-[#8a97ad]">Technologies</p></div>
+          <div class="border-l border-[#223047] pl-4"><p class="text-2xl font-semibold">CSE</p><p class="text-xs text-[#8a97ad]">Year 1</p></div>
+          <div class="border-l border-[#223047] pl-4"><p class="text-2xl font-semibold">BD</p><p class="text-xs text-[#8a97ad]">Dhaka</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="px-6 py-28 border-t border-[#223047]">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-2xl font-semibold tracking-tight mb-12">Skills</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+      <div class="tile bg-[#131a27] border border-[#223047] rounded-2xl p-6 flex flex-col items-center gap-4"><svg viewBox="0 0 24 24" class="w-12 h-12" aria-hidden="true"><path d="M3 2l1.7 18.8L12 23l7.3-2.2L21 2z" fill="#E34F26"/><path d="M12 4v17.3l5.8-1.7L19.3 4z" fill="#EF652A"/><path d="M7 8h10l-.3 3H10l.2 2.5H16l-.4 4.3-3.6 1-3.6-1-.2-2.8h2.7l.1 1.3 1 .3 1-.3.1-1.7H7.6z" fill="#fff"/></svg><span class="text-sm">HTML5</span></div>
+      <div class="tile bg-[#131a27] border border-[#223047] rounded-2xl p-6 flex flex-col items-center gap-4"><svg viewBox="0 0 24 24" class="w-12 h-12" aria-hidden="true"><path d="M3 2l1.7 18.8L12 23l7.3-2.2L21 2z" fill="#1572B6"/><path d="M12 4v17.3l5.8-1.7L19.3 4z" fill="#33A9DC"/><path d="M7 8h10l-.3 3H10l.2 2.5h6l-.4 4.3-3.8 1-3.8-1-.2-2.8h2.7l.1 1.3 1.2.3 1.1-.3.2-1.7H7z" fill="#fff"/></svg><span class="text-sm">CSS3</span></div>
+      <div class="tile bg-[#131a27] border border-[#223047] rounded-2xl p-6 flex flex-col items-center gap-4"><svg viewBox="0 0 24 24" class="w-12 h-12" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="2" fill="#F7DF1E"/><text x="12.5" y="19" font-size="9.5" font-weight="800" font-family="Sora,sans-serif" fill="#111" text-anchor="middle">JS</text></svg><span class="text-sm">JavaScript</span></div>
+      <div class="tile bg-[#131a27] border border-[#223047] rounded-2xl p-6 flex flex-col items-center gap-4"><svg viewBox="0 0 24 24" class="w-12 h-12" aria-hidden="true"><path fill="#38BDF8" d="M12 6c-2.67 0-4.33 1.33-5 4 1-1.33 2.17-1.83 3.5-1.5.76.19 1.31.74 1.91 1.35.98 1 2.09 2.15 4.59 2.15 2.67 0 4.33-1.33 5-4-1 1.33-2.17 1.83-3.5 1.5-.76-.19-1.3-.74-1.91-1.35C15.61 7.15 14.5 6 12 6zm-5 6c-2.67 0-4.33 1.33-5 4 1-1.33 2.17-1.83 3.5-1.5.76.19 1.3.74 1.91 1.35C8.39 16.85 9.5 18 12 18c2.67 0 4.33-1.33 5-4-1 1.33-2.17 1.83-3.5 1.5-.76-.19-1.3-.74-1.91-1.35C10.61 13.15 9.5 12 7 12z"/></svg><span class="text-sm">Tailwind CSS</span></div>
+      <div class="tile bg-[#131a27] border border-[#223047] rounded-2xl p-6 flex flex-col items-center gap-4"><svg viewBox="0 0 24 24" class="w-12 h-12" aria-hidden="true"><path d="M11.9 2C7.5 2 7.8 3.9 7.8 3.9V6h4.2v.7H6.1S3 6.3 3 11s2.7 4.5 2.7 4.5h1.6v-2.2s-.1-2.7 2.7-2.7h4.6s2.600 0 2.600-2.500V4.700S17.700 2 11.900 2zM9.500 3.600a.8.8 0 110 1.600.8.8 0 010-1.600z" fill="#3776AB"/><path d="M12.100 22c4.400 0 4.100-1.900 4.100-1.900V18h-4.200v-.7h5.900s3.100.4 3.100-4.300-2.700-4.500-2.700-4.500h-1.600v2.200s.1 2.700-2.700 2.700H9.400s-2.600 0-2.600 2.500v3.900S6.300 22 12.100 22zm2.400-1.600a.8.8 0 110-1.600.8.8 0 010 1.600z" fill="#FFD43B"/></svg><span class="text-sm">Python</span></div>
+      <div class="tile bg-[#131a27] border border-[#223047] rounded-2xl p-6 flex flex-col items-center gap-4"><svg viewBox="0 0 24 24" class="w-12 h-12" aria-hidden="true"><polygon points="12,1.5 21.5,7 21.5,17 12,22.5 2.5,17 2.5,7" fill="#5C6BC0"/><text x="12" y="16.5" font-size="11" font-weight="800" font-family="Sora,sans-serif" fill="#fff" text-anchor="middle">C</text></svg><span class="text-sm">C</span></div>
+      <div class="tile bg-[#131a27] border border-[#223047] rounded-2xl p-6 flex flex-col items-center gap-4"><svg viewBox="0 0 24 24" class="w-12 h-12" aria-hidden="true"><polygon points="12,1.5 21.5,7 21.5,17 12,22.5 2.5,17 2.5,7" fill="#5FA04E"/><text x="12" y="15.200" font-size="6.500" font-weight="800" font-family="Sora,sans-serif" fill="#fff" text-anchor="middle">node</text></svg><span class="text-sm">Node.js</span></div>
+      <div class="tile bg-[#131a27] border border-[#223047] rounded-2xl p-6 flex flex-col items-center gap-4"><svg viewBox="0 0 24 24" class="w-12 h-12" aria-hidden="true"><g fill="none" stroke="#61DAFB" stroke-width="1.100"><ellipse cx="12" cy="12" rx="10" ry="4.100"/><ellipse cx="12" cy="12" rx="10" ry="4.100" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4.100" transform="rotate(120 12 12)"/></g><circle cx="12" cy="12" r="1.900" fill="#61DAFB"/></svg><span class="text-sm">React</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="px-6 py-28 border-t border-[#223047]">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-2xl font-semibold tracking-tight mb-12">Projects</h2>
+      <!-- Replace titles, text and links with your own projects -->
+      <div class="grid md:grid-cols-3 gap-5">
+        <a href="#" class="tile block bg-[#131a27] border border-[#223047] rounded-2xl p-6">
+          <p class="text-xs text-[#8a97ad] mb-6">HTML, Tailwind CSS</p>
+          <h3 class="font-semibold mb-2">Your first project</h3>
+          <p class="text-sm text-[#8a97ad] font-light">One line about what it does and why you built it.</p>
+        </a>
+        <a href="#" class="tile block bg-[#131a27] border border-[#223047] rounded-2xl p-6">
+          <p class="text-xs text-[#8a97ad] mb-6">React, Node.js</p>
+          <h3 class="font-semibold mb-2">Your second project</h3>
+          <p class="text-sm text-[#8a97ad] font-light">One line about what it does and why you built it.</p>
+        </a>
+        <a href="#" class="tile block bg-[#131a27] border border-[#223047] rounded-2xl p-6">
+          <p class="text-xs text-[#8a97ad] mb-6">Python, C</p>
+          <h3 class="font-semibold mb-2">Your third project</h3>
+          <p class="text-sm text-[#8a97ad] font-light">One line about what it does and why you built it.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="px-6 py-28 border-t border-[#223047]">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tighter max-w-2xl leading-tight">Have an idea or a team to join? Let's talk.</h2>
+      <div class="mt-10 flex flex-wrap gap-4 text-sm">
+        <a href="mailto:you@example.com" class="px-6 py-3 rounded-full bg-white text-[#0c1018] font-semibold hover:bg-[#7cc4ff] transition-colors">Email me</a>
+        <a href="https://github.com/your-username" class="px-6 py-3 rounded-full border border-[#223047] hover:border-[#7cc4ff] transition-colors">GitHub</a>
+        <a href="https://linkedin.com/in/your-username" class="px-6 py-3 rounded-full border border-[#223047] hover:border-[#7cc4ff] transition-colors">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="relative z-10 border-t border-[#223047] px-6 py-8 text-center text-xs text-[#8a97ad]">
+  © 2026 Jubaer Hasan Sajim
+</footer>
+
+</body>
+</html>
